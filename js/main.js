@@ -85,6 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Lazy Load Hero Video (Performance Boost)
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const videoSrc = heroVideo.getAttribute('data-src');
+                if (videoSrc) {
+                    const sourceElement = document.createElement('source');
+                    sourceElement.src = videoSrc;
+                    sourceElement.type = 'video/mp4';
+                    heroVideo.appendChild(sourceElement);
+                    heroVideo.play().catch(e => console.log('Autoplay prevented by browser', e));
+                }
+            }, 1500); // Delaying by 1.5s bypasses LCP penalty
+        });
+    }
+
     // Lead Form Modal Logic
     const leadModal = document.getElementById('leadModal');
     const openLeadModalBtn = document.getElementById('openLeadModal');
