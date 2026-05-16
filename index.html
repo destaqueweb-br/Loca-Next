@@ -11,21 +11,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     
+    <!-- Logo Preload -->
+    <link rel="preload" as="image" href="img/logo-white.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome for icons (Deferred) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
 
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="img/logo-white.png" alt="Loca Next Logo" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/0A4F2A/FFF?text=LOCA+NEXT&font=montserrat';">
+            <a href="index.html" class="logo" aria-label="Loca Next Home">
+                <img src="img/logo-white.png" alt="Loca Next Logo" class="brand-logo" width="150" height="50" onerror="this.onerror=null; this.src='https://placehold.co/150x50/0A4F2A/FFF?text=LOCA+NEXT&font=montserrat';">
             </a>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" aria-label="Abrir menu mobile"><i class="fas fa-bars"></i></button>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#beneficios">Benefícios</a></li>
@@ -121,7 +125,7 @@
                         <p class="brand">Honda CG Fan 125i</p>
                     </div>
                     <div class="plan-image">
-                        <img src="img/moto-cg-125c.jpeg" alt="Honda CG Fan 125i" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="img/moto-cg-125c.jpeg" alt="Honda CG Fan 125i" width="300" height="200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                     </div>
                     <div class="plan-price">
                         <span class="price-from">Diárias a partir de</span>
@@ -145,10 +149,10 @@
                     <div class="plan-image carousel-wrapper">
                         <div class="carousel-inner">
                             <div class="carousel-item">
-                                <img src="img/moto-yamaha-150c.jpeg" alt="Yamaha 150c">
+                                <img src="img/moto-yamaha-150c.jpeg" alt="Yamaha 150c" width="300" height="200" loading="lazy">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/moto-shineray-150c.jpeg" alt="Shineray 150c">
+                                <img src="img/moto-shineray-150c.jpeg" alt="Shineray 150c" width="300" height="200" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -171,7 +175,7 @@
                         <p class="brand">Honda CG 160</p>
                     </div>
                     <div class="plan-image">
-                        <img src="img/moto-cg-160.jpeg" alt="Honda CG 160" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <img src="img/moto-cg-160.jpeg" alt="Honda CG 160" width="300" height="200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                     </div>
                     <div class="plan-price">
                         <span class="price-from">Diárias a partir de</span>
@@ -194,11 +198,11 @@
     </button>
 
     <!-- Lead Capture Modal -->
-    <div class="modal-overlay" id="leadModal">
+    <div class="modal-overlay" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <button class="modal-close" id="closeLeadModal"><i class="fas fa-times"></i></button>
+            <button class="modal-close" id="closeLeadModal" aria-label="Fechar formulário"><i class="fas fa-times"></i></button>
             <div class="modal-header">
-                <h3>Ainda com dúvidas?</h3>
+                <h3 id="modalTitle">Ainda com dúvidas?</h3>
                 <p>Deixe seu contato e nossa equipe falará com você em breve.</p>
             </div>
             <form id="leadForm" class="lead-form">
@@ -226,8 +230,8 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-info">
-                <a href="#" class="logo footer-logo">
-                    <img src="img/logo-white.png" alt="Loca Next Logo Branca" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/052a16/FFF?text=LOCA+NEXT&font=montserrat';">
+                <a href="#" class="logo footer-logo" aria-label="Loca Next Home">
+                    <img src="img/logo-white.png" alt="Loca Next Logo Branca" class="brand-logo" width="150" height="50" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/150x50/052a16/FFF?text=LOCA+NEXT&font=montserrat';">
                 </a>
                 <p>A sua parceira ideal para acelerar seus ganhos nos aplicativos de transporte e entrega.</p>
             </div>

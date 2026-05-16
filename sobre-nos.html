@@ -11,21 +11,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     
+    <!-- Logo Preload -->
+    <link rel="preload" as="image" href="img/logo-white.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome for icons (Deferred) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
 
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="img/logo-white.png" alt="Loca Next Logo" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/0A4F2A/FFF?text=LOCA+NEXT&font=montserrat';">
+            <a href="index.html" class="logo" aria-label="Loca Next Home">
+                <img src="img/logo-white.png" alt="Loca Next Logo" class="brand-logo" width="150" height="50" onerror="this.onerror=null; this.src='https://placehold.co/150x50/0A4F2A/FFF?text=LOCA+NEXT&font=montserrat';">
             </a>
-            <button class="mobile-menu-btn" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" aria-label="Abrir menu mobile"><i class="fas fa-bars"></i></button>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html#beneficios">Benefícios</a></li>
@@ -145,8 +149,8 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-info">
-                <a href="index.html" class="logo footer-logo">
-                    <img src="img/logo-white.png" alt="Loca Next Logo Branca" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/052a16/FFF?text=LOCA+NEXT&font=montserrat';">
+                <a href="index.html" class="logo footer-logo" aria-label="Loca Next Home">
+                    <img src="img/logo-white.png" alt="Loca Next Logo Branca" class="brand-logo" width="150" height="50" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/150x50/052a16/FFF?text=LOCA+NEXT&font=montserrat';">
                 </a>
                 <p>A sua parceira ideal para acelerar seus ganhos nos aplicativos de transporte e entrega.</p>
             </div>

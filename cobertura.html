@@ -11,21 +11,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     
+    <!-- Logo Preload -->
+    <link rel="preload" as="image" href="img/logo-white.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome for icons (Deferred) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
 
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="img/logo-white.png" alt="Loca Next Logo" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/0A4F2A/FFF?text=LOCA+NEXT&font=montserrat';">
+            <a href="index.html" class="logo" aria-label="Loca Next Home">
+                <img src="img/logo-white.png" alt="Loca Next Logo" class="brand-logo" width="150" height="50" onerror="this.onerror=null; this.src='https://placehold.co/150x50/0A4F2A/FFF?text=LOCA+NEXT&font=montserrat';">
             </a>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" aria-label="Abrir menu mobile"><i class="fas fa-bars"></i></button>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html#beneficios">Benefícios</a></li>
@@ -65,7 +69,7 @@
                 <div class="coverage-visual">
                     <!-- A visual representation of a radius -->
                     <div class="radar-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117466.86438062137!2d-46.86311685!3d-23.2104085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf34614ff7fb51%3A0xb6cfb33ce2355523!2sCampo%20Limpo%20Paulista%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1715822986427!5m2!1spt-BR!2sbr" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117466.86438062137!2d-46.86311685!3d-23.2104085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf34614ff7fb51%3A0xb6cfb33ce2355523!2sCampo%20Limpo%20Paulista%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1715822986427!5m2!1spt-BR!2sbr" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da Região de Cobertura Loca Next"></iframe>
                         <div class="radar-overlay"></div>
                         <div class="pulse"></div>
                         <i class="fas fa-map-marker-alt center-pin"></i>
@@ -110,8 +114,8 @@
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-info">
-                <a href="index.html" class="logo footer-logo">
-                    <img src="img/logo-white.png" alt="Loca Next Logo Branca" class="brand-logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/052a16/FFF?text=LOCA+NEXT&font=montserrat';">
+                <a href="index.html" class="logo footer-logo" aria-label="Loca Next Home">
+                    <img src="img/logo-white.png" alt="Loca Next Logo Branca" class="brand-logo" width="150" height="50" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/150x50/052a16/FFF?text=LOCA+NEXT&font=montserrat';">
                 </a>
                 <p>A sua parceira ideal para acelerar seus ganhos nos aplicativos de transporte e entrega.</p>
             </div>
