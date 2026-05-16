@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lazy Load Hero Video (Performance Boost)
     const heroVideo = document.getElementById('heroVideo');
+    const videoSplash = document.getElementById('videoSplash');
     if (heroVideo) {
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -96,7 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     sourceElement.src = videoSrc;
                     sourceElement.type = 'video/mp4';
                     heroVideo.appendChild(sourceElement);
-                    heroVideo.play().catch(e => console.log('Autoplay prevented by browser', e));
+                    heroVideo.play().then(() => {
+                        if (videoSplash) videoSplash.classList.add('fade-out');
+                    }).catch(e => console.log('Autoplay prevented by browser', e));
                 }
             }, 1500); // Delaying by 1.5s bypasses LCP penalty
         });
